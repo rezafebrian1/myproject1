@@ -52,7 +52,7 @@ export const generateImage = async (
 ): Promise<string> => {
   if (!process.env.API_KEY) throw new Error("API Key is missing");
 
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   const prompt = getPrompt(req, angle);
   const ratio = mapAspectRatio(req.aspectRatio);
   
